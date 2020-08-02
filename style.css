@@ -71,7 +71,8 @@ textarea {
     transition: all .3s ease-in-out;
 }
 
-.container {
+
+/* .container {
     padding: 0px;
     background-color: #d6f8ff;
     border-radius: 15px;
@@ -82,7 +83,9 @@ textarea {
     list-style-type: none;
 }
 
-li {
+.time-blocks-item {
     padding: 3%;
     border-bottom: 2px solid #000000;
-}
+} */
+
+*/
