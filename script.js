@@ -8,8 +8,6 @@ $(document).ready(function() {
     const startOfJourney = moment().hour(9); //Variable to define the starting time of a journey and use it in the inBetween function from moment
     const endOfJourney = moment().hour(17); //Variable to define the end time of a journey and use it in the inBetween function from moment
     let currentT; // variable defined to store the current time;
-    //let LocalStorageArray = []; //Intented to store JSON objects timeblocks
-    //let hoursCount = 9;
     ////////--->End of Variables declarations<---////////
 
     //////Render current day
@@ -63,17 +61,9 @@ $(document).ready(function() {
                                             <textarea id="text-${reversedFuture[y].format("hA")}" rows="1" cols="128" class="${classN} text-area"></textarea>                               
                                             <button id="${reversedFuture[y].format("hA")}" class="saveBtn"><span class="fas fa-save"></span></button>
                                     </div>`);
+                //updating the value of the recentely created textarea from localstorage                    
                 $(`#text-${reversedFuture[y].format("hA")}`).val(localStorage.getItem(reversedFuture[y].format("hA")));
-                /*                 hoursCount = hoursCount - 1;
-                                let timeBlock = {
-                                    "index": hoursCount,
-                                    "time": reversedFuture[y].format("hA"),
-                                    "value": $(`#text-${reversedFuture[y].format("hA")}`).val(),
-                                    "saved": false
-                                }
-                                LocalStorageArray.push(timeBlock); */
             }
-
         }
 
         //This for loop is intented to render the past business hours from the current time
@@ -86,33 +76,20 @@ $(document).ready(function() {
                                             
                                             <button id="${reversedPast[x].format("hA")}" class="saveBtn"><span class="fas fa-save"></span></button>
                                     </div>`);
+                //updating the value of the recentely created textarea from localstorage                                    
                 $(`#text-${reversedPast[x].format("hA")}`).val(localStorage.getItem(reversedPast[x].format("hA")));
-                /*                 hoursCount = hoursCount - 1;
-                                let timeBlock = {
-                                    "index": hoursCount,
-                                    "time": reversedPast[x].format("hA"),
-                                    "value": $(`text-${reversedPast[x].format("hA")}`).val(),
-                                    "saved": false
-                                }
-                                LocalStorageArray.push(timeBlock); */
+
             }
         }
 
     }
     renderTimeBlocks();
 
-
     //Set localStorage variables to store notes of the events written in the time blocks
-    //let rLocalStorageArray = LocalStorageArray.reverse() //reversed LocalStorageArray
-    //console.log(rLocalStorageArray); // Logging timeblocksarray
-
     $('.saveBtn').on("click", function() {
         let id = $(this).attr("id");
         let valor = $(`#text-${id}`).val();
         console.log(valor);
         localStorage.setItem(`${id}`, valor);
     });
-
-
-
 });
