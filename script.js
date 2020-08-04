@@ -8,6 +8,7 @@ $(document).ready(function() {
     const startOfJourney = moment().hour(9); //Variable to define the starting time of a journey and use it in the inBetween function from moment
     const endOfJourney = moment().hour(17); //Variable to define the end time of a journey and use it in the inBetween function from moment
     let currentT; // variable defined to store the current time;
+
     ////////--->End of Variables declarations<---////////
 
     //////Render current day
@@ -20,7 +21,7 @@ $(document).ready(function() {
     //////Store time blocks in an array
     function StoreTimeHoursinArray() {
         //Store time business hours past from current time ()
-        for (let i = 0; i <= 24; i++) {
+        for (let i = 1; i <= 24; i++) { // iterator i will iterate until i gets to 24 Hours past from current time
             currentT = moment().subtract(i, "hours");
             pastHoursFromCurrentMoment.unshift(currentT);
         }
@@ -28,7 +29,7 @@ $(document).ready(function() {
         futureHoursFromCurrentMoment.push(moment());
 
         //Store future bussiness hours from current time in the array
-        for (let j = 0; j <= 24; j++) {
+        for (let j = 1; j <= 24; j++) { //iterator j will iterate 24 times which a representation of the hours from current time to future of hours remaining
             currentT = moment().add(j, "hours");
             futureHoursFromCurrentMoment.push(currentT);
         }
