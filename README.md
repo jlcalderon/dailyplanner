@@ -30,6 +30,7 @@ In this app time/dates are handled by using [Moment.js](https://momentjs.com/) l
 ## Functionality
 The following animation demonstrate the application functionality:
 ![Dailyplanner demo](Work_Day_Scheduler.gif)
+PD: I recoreded this demo early morning at 6:00 AM so all the events show up as upcomming.
 
 ## Contributions
 If you will like to contribute to this app you are more than welcome. Please check the [repository](https://github.com/jlcalderon/dailyplanner) and the [deployed app](https://jlcalderon.github.io/dailyplanner/). Clone/Fork Request a pull and push your changes. Please feel free to contact for more information <jlcalderonfuentes@gmail.com>
